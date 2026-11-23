@@ -1,6 +1,15 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 export function Header() {
+  const { usuario, logout } = useAuth();
+  const navigate = useNavigate();
+
+  function sair() {
+    logout();
+    navigate('/');
+  }
+
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -14,8 +23,17 @@ export function Header() {
           <NavLink to="/como-funciona">Como funciona</NavLink>
         </nav>
         <div className="header-actions">
-          <Link className="text-link" to="/login">Entrar</Link>
-          <Link className="button button-primary button-small" to="/cadastro">Cadastrar</Link>
+          {usuario ? (
+            <>
+              <Link className="text-link" to="/area-demo">Minha área ({usuario.tipo})</Link>
+              <button className="button button-secondary button-small" type="button" onClick={sair}>Sair</button>
+            </>
+          ) : (
+            <>
+              <Link className="text-link" to="/login">Entrar</Link>
+              <Link className="button button-primary button-small" to="/cadastro">Cadastrar</Link>
+            </>
+          )}
         </div>
       </div>
     </header>
