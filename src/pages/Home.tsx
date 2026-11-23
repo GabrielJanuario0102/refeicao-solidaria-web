@@ -12,7 +12,7 @@ export function Home() {
               <Link to="/como-funciona" className="button button-primary">Entenda como funciona</Link>
               <Link to="/cadastro" className="button button-secondary">Quero ajudar</Link>
             </div>
-            <p className="disclaimer">Projeto em desenvolvimento · O cadastro será implementado na Sprint 2.</p>
+            <p className="disclaimer">Projeto em desenvolvimento · Cadastro e acesso disponíveis em modo de demonstração.</p>
           </div>
           <div className="hero-visual" aria-label="Fluxo solidário entre doadores, instituições e voluntários">
             <div className="visual-card"><span>🍲</span><div><strong>Doadores</strong><small>Compartilham excedentes</small></div></div>
