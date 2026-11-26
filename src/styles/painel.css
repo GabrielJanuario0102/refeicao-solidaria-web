@@ -1,0 +1,25 @@
+.painel-wrapper {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 28px;
+  padding-block: 46px 70px;
+  align-items: start;
+}
+.painel-sidebar {
+  border: 1px solid #dceae1;
+  border-radius: 16px;
+  background: #fff;
+  padding: 20px;
+}
+.painel-sidebar-titulo { font-weight: 750; margin: 0 0 14px; }
+.painel-menu { display: flex; flex-direction: column; gap: 7px; }
+.painel-menu a { text-decoration: none; color: #255341; border-radius: 9px; padding: 11px 12px; }
+.painel-menu a:hover, .painel-menu a.active { background: #e6f7ee; color: #065f46; }
+.painel-conteudo { border: 1px solid #dceae1; background: #fff; border-radius: 16px; padding: 32px; min-width: 0; }
+.painel-conteudo h1 { font-size: clamp(1.65rem, 3vw, 2.4rem); margin: 8px 0 18px; }
+.painel-aviso { margin-top: 28px; padding: 19px; border-left: 4px solid #059669; background: #f0faf4; border-radius: 8px; }
+.painel-aviso p { margin: 8px 0 0; }
+@media(max-width: 750px) {
+  .painel-wrapper { grid-template-columns: 1fr; gap: 14px; padding-block: 25px 45px; }
+  .painel-conteudo { padding: 23px; }
+}
